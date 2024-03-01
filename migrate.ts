@@ -1,9 +1,9 @@
-import { config } from 'dotenv';
+import "dotenv/config"
 import { migrate } from 'drizzle-orm/postgres-js/migrator';
 import postgres from 'postgres';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import * as schema from './src/schema';
-config();
+
 const db = drizzle(postgres(`${process.env.DATABASE_URL}`),{ schema });
 
 const main = async () => {
